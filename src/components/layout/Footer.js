@@ -1,6 +1,9 @@
+import classes from '../layout/Footer.module.css';
+
+const c = classes;
 
 function Footer(){
-    return <div>This is a footer component.</div>
+    return <footer className={c.header}>This is a footer component.</footer>
 }
 
 export default Footer;

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import classes from '../layout/MainNav.module.css';
+
+const c = classes;
 
 function MainNav() {
   return (
-    <header>
+    <header className={c.header}>
       <div>Two Sons</div>
       <nav>
         <ul>
