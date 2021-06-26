@@ -1,3 +1,8 @@
-.item {
-  border: 2px solid black;
+.vehicleCard {
+  margin: 6px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
 }

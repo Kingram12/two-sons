@@ -15,7 +15,7 @@ const cars = [
         available: true,
     },
     {
-        id: 1,
+        id: 2,
         image:'https://static.seattletimes.com/wp-content/uploads/2012/08/2018917565-780x0.jpg',
         year: 1987,
         make: 'Ford', 
@@ -25,7 +25,7 @@ const cars = [
         available: true,
     },
     {
-        id: 1,
+        id: 3,
         image:'https://i.pinimg.com/originals/be/b5/8f/beb58f309e9ca6bb4bd3065ee5304a0f.jpg',
         year: 1965,
         make: 'Ford', 
@@ -35,7 +35,7 @@ const cars = [
         available: true,
     },
     {
-        id: 1,
+        id: 4,
         image:'https://static.seattletimes.com/wp-content/uploads/2012/08/2018917565-780x0.jpg',
         year: 1987,
         make: 'Ford', 

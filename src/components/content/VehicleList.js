@@ -1,12 +1,14 @@
 import Vehicle from "./Vehicle";
+import classes from "./VehicleList.module.css";
+
+const c = classes;
 
 function VehicleList({cars}) {
   return (
-    <ul>
+    <ul className={c.list}>
       {cars.map((car) => (
         <Vehicle
           key={car.id}
-          id={car.id}
           image={car.image}
           year={car.year}
           make={car.make}
