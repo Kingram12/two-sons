@@ -1,6 +1,6 @@
 import Vehicle from "./Vehicle";
 
-function AvailableList({ cars }) {
+function VehicleList({cars}) {
   return (
     <ul>
       {cars.map((car) => (
@@ -8,15 +8,16 @@ function AvailableList({ cars }) {
           key={car.id}
           id={car.id}
           image={car.image}
-          year={car.title}
+          year={car.year}
           make={car.make}
           model={car.model}
           price={car.price}
           details={car.details}
+          available={car.available}
         />
       ))}
     </ul>
   );
 }
 
-export default AvailableList;
+export default VehicleList;

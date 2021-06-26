@@ -2,3 +2,21 @@
   background: black;
   color: white;
 }
+
+.logo {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  color: white;
+}
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+}

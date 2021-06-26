@@ -4,6 +4,7 @@ import CurrentInventory from './pages/CurrentInventory';
 import PreviouslySold from './pages/PreviouslySold';
 import Reviews from './pages/Reviews';
 import Layout from './components/layout/Layout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

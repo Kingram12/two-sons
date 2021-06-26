@@ -6,9 +6,9 @@ const c = classes;
 function MainNav() {
   return (
     <header className={c.header}>
-      <div>Two Sons</div>
+      <div className={c.logo}>Two Sons</div>
       <nav>
-        <ul>
+        <ul className={c.links}>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -24,6 +24,8 @@ function MainNav() {
         </ul>
       </nav>
     </header>
+
+    
   );
 }
 
