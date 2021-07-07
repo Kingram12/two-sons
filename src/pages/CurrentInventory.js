@@ -1,55 +1,45 @@
-import VehicleList from '../components/content/VehicleList';
-import classes from './CurrentInventory.module.css'
+import VehicleList from "../components/content/VehicleList";
+import classes from "./CurrentInventory.module.css";
+import { useState, useEffect } from "react";
 
 const c = classes;
 
-const cars = [
-    {
-        id: 1,
-        image:'https://i.pinimg.com/originals/be/b5/8f/beb58f309e9ca6bb4bd3065ee5304a0f.jpg',
-        year: 1965,
-        make: 'Ford', 
-        model: 'Mustang',
-        price: 25000,
-        details: 'Additional info',
-        available: true,
-    },
-    {
-        id: 2,
-        image:'https://static.seattletimes.com/wp-content/uploads/2012/08/2018917565-780x0.jpg',
-        year: 1987,
-        make: 'Ford', 
-        model: 'A',
-        price: 25000,
-        details: 'Additional info 2',
-        available: true,
-    },
-    {
-        id: 3,
-        image:'https://i.pinimg.com/originals/be/b5/8f/beb58f309e9ca6bb4bd3065ee5304a0f.jpg',
-        year: 1965,
-        make: 'Ford', 
-        model: 'Mustang',
-        price: 25000,
-        details: 'Additional info',
-        available: true,
-    },
-    {
-        id: 4,
-        image:'https://static.seattletimes.com/wp-content/uploads/2012/08/2018917565-780x0.jpg',
-        year: 1987,
-        make: 'Ford', 
-        model: 'A',
-        price: 25000,
-        details: 'Additional info 2',
-        available: true,
-    },
-]
-
 function CurrentInventory() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedCars, setLoadedCars] = useState([]);
 
+  useEffect(() => {
+    setIsLoading(true);
+      fetch('https://two-sons-default-rtdb.firebaseio.com/inventory.json',)
+      .then((response => {
+      return response.json();
+      })
+      .then((data => {
+        const inventory = [];
+        for (const key in data) {
+          const vehicle = {
+            id: key,
+            ...data[key],
+          };
+          inventory.push(vehicle);
+        }
+        setIsLoading(false);
+        setLoadedCars(inventory);
+      })))
+  }, []);
 
-    return <div className={c.list}><VehicleList cars={cars}/></div>
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+  return (
+    <div className={c.list}>
+      <VehicleList cars={loadedCars} />
+    </div>
+  );
 }
 
 export default CurrentInventory;

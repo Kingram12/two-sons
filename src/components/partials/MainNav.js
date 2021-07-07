@@ -21,6 +21,9 @@ function MainNav() {
           <li className={c.link}>
             <Link to="/reviews">Reviews</Link>
           </li>
+          <li className={c.link}>
+            <Link to="/manage">Admin</Link>
+          </li>
         </ul>
       </nav>
     </header>
