@@ -10,11 +10,11 @@ function CurrentInventory() {
 
   useEffect(() => {
     setIsLoading(true);
-      fetch('https://two-sons-default-rtdb.firebaseio.com/inventory.json',)
-      .then((response => {
+      fetch('https://two-sons-default-rtdb.firebaseio.com/inventory/currentInventory.json')
+      .then((response) => {
       return response.json();
       })
-      .then((data => {
+      .then((data) => {
         const inventory = [];
         for (const key in data) {
           const vehicle = {
@@ -25,7 +25,7 @@ function CurrentInventory() {
         }
         setIsLoading(false);
         setLoadedCars(inventory);
-      })))
+      });
   }, []);
 
   if (isLoading) {
@@ -39,6 +39,7 @@ function CurrentInventory() {
     <div className={c.list}>
       <VehicleList cars={loadedCars} />
     </div>
+
   );
 }
 

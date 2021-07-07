@@ -1,53 +1,46 @@
 import VehicleList from '../components/content/VehicleList';
 import classes from './PreviouslySold.module.css'
+import { useState, useEffect } from "react";
 
 const c = classes;
 
-const soldCars = [
-    {
-        id: 5,
-        image:'',
-        year: 1975,
-        make: 'Chevrolet', 
-        model: 'Corvette',
-        price: 18000,
-        details: 'Sold Additional info 3',
-        available: false,
-    },
-    {
-        id: 6,
-        image:'',
-        year: 1987,
-        make: 'Ford', 
-        model: 'A',
-        price: 25000,
-        details: 'Sold Additional info 4',
-        available: false,
-    },
-    {
-        id: 7,
-        image:'',
-        year: 1975,
-        make: 'Chevrolet', 
-        model: 'Corvette',
-        price: 18000,
-        details: 'Sold Additional info 3',
-        available: false,
-    },
-    {
-        id: 8,
-        image:'',
-        year: 1987,
-        make: 'Ford', 
-        model: 'A',
-        price: 25000,
-        details: 'Sold Additional info 4',
-        available: false,
-    },
-]
-
 function PreviouslySold() {
-    return <div className={c.list}><VehicleList cars={soldCars}/></div>
+    const [isLoading, setIsLoading] = useState(true);
+    const [loadedCars, setLoadedCars] = useState([]);
+  
+    useEffect(() => {
+      setIsLoading(true);
+        fetch('https://two-sons-default-rtdb.firebaseio.com/inventory/pastInventory.json')
+        .then((response) => {
+        return response.json();
+        })
+        .then((data) => {
+          const inventory = [];
+          for (const key in data) {
+            const vehicle = {
+              id: key,
+              ...data[key],
+            };
+            inventory.push(vehicle);
+          }
+          setIsLoading(false);
+          setLoadedCars(inventory);
+        });
+    }, []);
+  
+    if (isLoading) {
+      return (
+        <section>
+          <p>Loading...</p>
+        </section>
+      );
+    }
+    return (
+      <div className={c.list}>
+        <VehicleList cars={loadedCars} />
+      </div>
+  
+    );
 }
 
 export default PreviouslySold;

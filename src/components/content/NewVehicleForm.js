@@ -31,7 +31,6 @@ function NewVehicleForm({ onAddVehicle }) {
       isAvailable: isAvailable,
     };
     onAddVehicle(vehicleData);
-    console.log(vehicleData);
   }
 
   return (
