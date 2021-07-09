@@ -1,6 +1,5 @@
-import ContactInfo from '../content/ContactInfo';
-import classes from '../partials/Footer.module.css';
-
+import ContactInfo from './ContactInfo';
+import classes from './Footer.module.css';
 const c = classes;
 
 function Footer(){

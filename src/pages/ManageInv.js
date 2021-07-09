@@ -38,6 +38,3 @@ function ManageInv() {
 }
 
 export default ManageInv;
-
-
-// If isAvailable = true ; post to Current Inventory / if not , post to previously sold - - - two end points? 

@@ -1,7 +1,11 @@
-import About from '../components/content/About';
+import About from "../components/content/About";
 
 function Home() {
-    return <div><About/></div>
+  return (
+      <div>
+        <About />
+      </div>
+  );
 }
 
 export default Home;

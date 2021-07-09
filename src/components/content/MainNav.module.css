@@ -31,3 +31,8 @@ a:visited {
   color: white;
   text-decoration: none;
 }
+
+.profile {
+  color: red;
+  size: 7rem;
+}

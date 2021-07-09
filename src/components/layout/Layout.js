@@ -1,5 +1,5 @@
-import MainNav from '../partials/MainNav';
-import Footer from '../partials/Footer';
+import MainNav from '../content/MainNav'
+import Footer from '../content/Footer'
 
 function Layout({children}) {
     return (
