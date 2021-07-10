@@ -7,38 +7,28 @@ import ManageInv from "./pages/ManageInv";
 import Layout from "./components/layout/Layout";
 import SignUp from "./components/content/SignUp";
 import Login from "./components/content/Login";
+import ForgotPassword from './components/content/ForgotPassword'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AuthProvider } from "./components/contexts/AuthContext";
+import { PrivateRoute } from "./components/content/PrivateRoute";
+import UpdateProfile from "./components/content/UpdateProfile";
 
 function App() {
   return (
     <AuthProvider>
-    <Layout>
-
+      <Layout>
         <Switch>
-          <Route path="/" exact={true}>
-            <Home />
-          </Route>
-          <Route path="/current-inventory">
-            <CurrentInventory />
-          </Route>
-          <Route path="/previously-sold">
-            <PreviouslySold />
-          </Route>
-          <Route path="/reviews">
-            <Reviews />
-          </Route>
-          <Route path="/signup">
-            <SignUp/>
-          </Route>
-          <Route path="/login">
-            <Login/>
-          </Route>
-          <Route path="/manage">
-            <ManageInv />
-          </Route>
+          <Route path="/" exact={true} component={Home}/>
+          <Route path="/current-inventory" component={CurrentInventory}/>
+          <Route path="/previously-sold" component={PreviouslySold}/>
+          <PrivateRoute exact path="/reviews" component={Reviews}/>
+          <PrivateRoute path="/update-profile" component={UpdateProfile}/>
+          <Route path="/signup" component={SignUp}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/forgot-password" component={ForgotPassword}/>
+          <Route path="/manage" component={ManageInv}/>
         </Switch>
-    </Layout>
+      </Layout>
     </AuthProvider>
   );
 }

@@ -1,20 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import classes from './MainNav.module.css'
-import { Button, Card, Alert } from 'react-bootstrap'
-import { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext'
+// import { Button, Card, Alert } from 'react-bootstrap'
+// import { useState } from 'react';
+// import { useAuth } from '../contexts/AuthContext'
 
 
 const c = classes;
 
 
 export default function MainNav() {
-  const [error, setError] = useState("");
-  const { currentUser } = useAuth();
+  // const [error, setError] = useState("");
+  // const { currentUser, logout } = useAuth();
+  // const history = useHistory();
 
-  function handleLogout(){
+  // async function handleLogout(){
+  //   setError('')
 
-  }
+  //   try{
+  //     await logout()
+  //     history.push('/login')
+
+  //   } catch {
+  //     setError('Failed to log out.')
+  //   }
+
+  // }
  
   return (
     <header className={c.header}>
@@ -39,14 +49,15 @@ export default function MainNav() {
           <li className={c.link}>
             <Link to="/login">Log In</Link>
           </li>
-          <Card className={c.profile}>
+          {/* <Card className={c.profile}>
             <Card.Body>
               <h2>Profile</h2>
-              {/* { error && <Alert variant="danger">{error}</Alert>} */}
+              { error && <Alert variant="danger">{error}</Alert>}
               <strong>Email:</strong>{currentUser.email}
+              <Link to="/update-profile" className="btn btn-primary w-100 mt-3">Update Profile</Link>
             </Card.Body>
           </Card>
-          <Button variant="link" onClick={handleLogout}>Log Out</Button>
+          <Button variant="link" onClick={handleLogout}>Log Out</Button> */}
         </ul>
       </nav>
     </header>
@@ -55,3 +66,5 @@ export default function MainNav() {
   );
 }
 
+
+//within login page have an admin option ??? 
