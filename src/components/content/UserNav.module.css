@@ -1,0 +1,9 @@
+.profile {
+  width: 50vw;
+  display: flex;
+}
+
+.link {
+  padding: 4px;
+  list-style: none;
+}

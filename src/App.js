@@ -21,7 +21,7 @@ function App() {
           <Route path="/" exact={true} component={Home}/>
           <Route path="/current-inventory" component={CurrentInventory}/>
           <Route path="/previously-sold" component={PreviouslySold}/>
-          <PrivateRoute exact path="/reviews" component={Reviews}/>
+          <Route path="/reviews" component={Reviews}/>
           <PrivateRoute path="/update-profile" component={UpdateProfile}/>
           <Route path="/signup" component={SignUp}/>
           <Route path="/login" component={Login}/>

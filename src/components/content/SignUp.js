@@ -2,6 +2,9 @@ import React, { useRef, useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { useAuth } from  '../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import classes from './SignUp.module.css';
+
+const c = classes;
 
 export default function Signup(){
 const emailRef = useRef();
@@ -30,11 +33,9 @@ async function handleSubmit(e) {
     }
 
 }
-
-
     return (
         <>
-            <Card>
+            <Card className={c.signup}>
                 <Card.Body>
                     <h2 className="text-center mb-4">Sign up</h2>
                     { error && <Alert variant="danger">{error}</Alert> }

@@ -4,8 +4,10 @@ const c = classes;
 
 function ContactInfo() {
     return (
-        <div className={c.contact}><p className={c.contact}>123 Street, Defiance, Ohio 12345</p>
-        <p className={c.contact}>Phone Number: 123-456-7890</p></div>
+        <div className={c.contactInfo}>
+        <p>Two Sons</p>
+        <p>123 Street, Defiance, Ohio 12345</p>
+        <p>Phone Number: 123-456-7890</p></div>
     )
 }
 

@@ -1,5 +1,5 @@
 function Reviews() {
-    return <h1>This is the reviews component.</h1>
+    return <h1>There are no reviews yet.</h1>
 }
 
 export default Reviews;
